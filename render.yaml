@@ -1,16 +1,16 @@
 services:
-  - type: web
-    name: lychylnyk-bot
+  - type: background
+    name: electricity-meter-bot
     env: python
-    buildCommand: pip install -r requirements.txt
+    plan: free
+    buildCommand: ""
     startCommand: python bot.py
-    autoDeploy: true
     envVars:
       - key: TELEGRAM_BOT_TOKEN
-        sync: false
+        value: your_telegram_bot_token
       - key: CREDENTIALS_JSON_BASE64
-        sync: false
+        value: your_base64_encoded_google_credentials
       - key: SPREADSHEET_ID
-        sync: false
+        value: your_spreadsheet_id
       - key: ADMIN_CHAT_IDS
-        sync: false
+        value: 12345678,87654321
