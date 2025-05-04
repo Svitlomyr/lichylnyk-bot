@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: lychylnyk-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: CREDENTIALS_JSON_BASE64
+        sync: false
+      - key: SPREADSHEET_ID
+        sync: false
+      - key: ADMIN_CHAT_IDS
+        sync: false
